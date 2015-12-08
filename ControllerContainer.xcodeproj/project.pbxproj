@@ -33,7 +33,9 @@
 				3E3E82241C168C4400F9953C /* ControllerContainer */,
 				3E3E82231C168C4400F9953C /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		3E3E82231C168C4400F9953C /* Products */ = {
 			isa = PBXGroup;
