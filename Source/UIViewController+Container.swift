@@ -11,9 +11,20 @@ public extension UIViewController {
 
         if let frame = frame {
             controller.view.frame = frame
+        } else {
+            controller.view.translatesAutoresizingMaskIntoConstraints = false
         }
 
         self.view.addSubview(controller.view)
+
+        if frame == nil {
+            let views = ["view": controller.view as AnyObject]
+
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[view]|", options: [], metrics: nil, views: views))
+
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[view]|", options: [], metrics: nil, views: views))
+        }
+
         controller.didMoveToParentViewController(self)
     }
 
